@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kevin Topete — Aerodynamics</title>
-<meta name="description" content="Aerodynamics and vehicle development work by Kevin Topete: rear wing, front wing and floor design, chassis, and on-track test correlation for Global Formula Racing.">
+<meta name="description" content="Aerodynamics and vehicle development work by Kevin Topete: rear wing and front wing design, parametric chassis, and on-track test correlation for Global Formula Racing.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1115'/%3E%3Cpath d='M6 22h20l-3-5H9z' fill='%23e8eaed'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -157,7 +157,7 @@
       <div>
         <p class="eyebrow">Aerodynamics · Vehicle Development</p>
         <h1>I design the aero package, then prove it on track.</h1>
-        <p class="lede">Mechanical engineering senior at Oregon State University, graduating March 2027. I lead aerodynamic design for Global Formula Racing — rear wing, front wing and floor — and run the test programme that checks it against simulation.</p>
+        <p class="lede">Mechanical engineering senior at Oregon State University, graduating March 2027. I lead aerodynamic design for Global Formula Racing — rear wing and front wing — and run the test programme that checks it against simulation.</p>
           <p class="hero-contact">
             <span><a href="mailto:kevin.topete36@gmail.com">kevin.topete36@gmail.com</a></span>
             <span class="sep" aria-hidden="true">·</span>
@@ -179,7 +179,7 @@
     <div class="wrap">
       <div class="stat"><div class="v">+8.5%</div><span class="k">Rear wing downforce</span></div>
       <div class="stat"><div class="v">+7%</div><span class="k">Downforce coefficient (CLA)</span></div>
-      <div class="stat"><div class="v">+14.5%</div><span class="k">Floor downforce coefficient</span></div>
+      <div class="stat"><div class="v">2nd</div><span class="k">Season leading DRS</span></div>
       <div class="stat"><div class="v">5%</div><span class="k">Coast-down drag vs. simulation</span></div>
     </div>
   </div>
@@ -190,40 +190,6 @@
         <h2>Last season</h2>
         <p>2026 car — the full aero package and chassis, designed before it ran.</p>
       </div>
-
-      <article class="project">
-        <div class="txt">
-          <h3>Front wing, floor and bodywork</h3>
-          <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
-          <ul>
-            <li>Scored every design iteration against a <b>points-weighted model of four operating attitudes</b> — heave, braking, high speed and low speed — using FSAE Michigan and FS Germany points sensitivities, so the concept is chosen on tracked performance, not a single CLA number.</li>
-            <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave, and tracked centre of pressure through each change.</li>
-            <li>Raised <b>floor downforce coefficient by 14.5%</b> while keeping front and rear wing CLA above 1%, with reduced surface area.</li>
-            <li>Designed the accommodating bodywork — nosecone, pedal box cover, rear fairing and splitter.</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="assets/rd-03.jpg" alt="Hybrid front wing concept, front three-quarter view" width="1200" height="435">
-          <figcaption>Hybrid front wing concept — compliant with the 2026 FSAE and FS rulebooks.</figcaption>
-        </figure>
-      </article>
-
-      <article class="project reverse">
-        <div class="txt">
-          <h3>Fully parametric chassis</h3>
-          <p class="meta">CAD architecture · Rules compliance</p>
-          <ul>
-            <li>Built the chassis as a single parametric model in Siemens NX, driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
-            <li>Encoded <b>two international Formula Student rule sets</b> as constraints, catching compliance issues before drawings were released.</li>
-            <li>Remodelled the 2025 chassis for steering rack integration and reduced volume.</li>
-            <li>Kept the model auditable for the next year's team: parameters documented, not buried in features.</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="assets/rd-12.jpg" alt="Chassis final parametric concept, top view" width="1200" height="1720">
-          <figcaption>Final parametric chassis concept — top view.</figcaption>
-        </figure>
-      </article>
 
       <article class="project no-fig">
         <div class="txt">
@@ -253,6 +219,40 @@
           <button class="shot" data-cap="Rib and spar set, CNC-cut and ready to bond"><img src="assets/rw26-05.jpg" alt="Rib and spar set ready to bond" width="1125" height="2000"></button>
         </div>
       </div>
+
+      <article class="project">
+        <div class="txt">
+          <h3>Fully parametric chassis</h3>
+          <p class="meta">CAD architecture · Rules compliance · Bodywork</p>
+          <ul>
+            <li>Built the chassis as a single parametric model in Siemens NX, driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
+            <li>Encoded <b>two international Formula Student rule sets</b> as constraints, catching compliance issues before drawings were released.</li>
+            <li>Remodelled the 2025 chassis for steering rack integration and reduced volume.</li>
+            <li>Designed the bodywork around it — nosecone, pedal box cover, rear fairing and splitter.</li>
+            <li>Kept the model auditable for the next year's team: parameters documented, not buried in features.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/rd-12.jpg" alt="Chassis final parametric concept, top view" width="1200" height="1720">
+          <figcaption>Final parametric chassis concept — top view.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project reverse">
+        <div class="txt">
+          <h3>Front wing and rear wing</h3>
+          <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
+          <ul>
+            <li>Scored every design iteration against a <b>points-weighted model of four operating attitudes</b> — heave, braking, high speed and low speed — using FSAE Michigan and FS Germany points sensitivities, so the concept is chosen on tracked performance, not a single CLA number.</li>
+            <li>Developed the front and rear wing as one aero package: traded front-axle load against rear load and tracked centre of pressure through each change, so the balance held as ride height moved.</li>
+            <li>Kept both wings compliant with the 2026 FSAE and FS rulebooks through every geometry change.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/rd-03.jpg" alt="Hybrid front wing concept, front three-quarter view" width="1200" height="435">
+          <figcaption>Hybrid front wing concept — compliant with the 2026 FSAE and FS rulebooks.</figcaption>
+        </figure>
+      </article>
     </div>
   </section>
 
@@ -263,7 +263,7 @@
         <p>2027 car — DRS, the test campaign and a HEEDS trial.</p>
       </div>
 
-      <article class="project no-fig">
+      <article class="project">
         <div class="txt">
           <h3>DRS: second season, now optimised in STAR-CCM+</h3>
           <p class="meta">Mechanical integration · CFD setup · Optimisation studies</p>
@@ -273,6 +273,10 @@
             <li>Kept the mechanism inside the rulebook and inside the existing rear wing structure, with actuation latency tracked as a design risk.</li>
           </ul>
         </div>
+        <figure>
+          <a href="assets/heeds-study.jpg" target="_blank" rel="noopener"><img src="assets/heeds-study.jpg" alt="Design study dashboard driving STAR-CCM+ runs, with output table and drag history plot" width="1600" height="732"></a>
+          <figcaption>Design study dashboard driving the STAR-CCM+ runs: DRS flap angles against drag and downforce.</figcaption>
+        </figure>
       </article>
 
       <article class="project">
@@ -291,7 +295,7 @@
         </figure>
       </article>
 
-      <article class="project reverse">
+      <article class="project no-fig">
         <div class="txt">
           <h3>Looking into HEEDS optimisation</h3>
           <p class="meta">Tool evaluation · Optimisation · Rear wing</p>
@@ -301,10 +305,6 @@
             <li>Straight-line testing too — coast-down and constant-speed runs.</li>
           </ul>
         </div>
-        <figure>
-          <a href="assets/heeds-study.jpg" target="_blank" rel="noopener"><img src="assets/heeds-study.jpg" alt="HEEDS design study dashboard with STAR-CCM+ output table and drag history plot" width="1600" height="732"></a>
-          <figcaption>HEEDS design study driving STAR-CCM+ runs for a rear wing concept: DRS flap angles against drag and downforce.</figcaption>
-        </figure>
       </article>
     </div>
   </section>
@@ -376,7 +376,7 @@
       </div>
       <div class="grid" style="margin-top:26px">
         <div>
-          <p>I'm a mechanical engineering senior at Oregon State University with an aerospace focus, graduating in March 2027. I lead aerodynamic design for Global Formula Racing: rear wing, front wing and floor development, plus the team's parametric chassis.</p>
+          <p>I'm a mechanical engineering senior at Oregon State University with an aerospace focus, graduating in March 2027. I lead aerodynamic design for Global Formula Racing — rear and front wing development — and own the team's parametric chassis.</p>
           <p>Most of what I know came from building the parts and then measuring the car. That order matters — a number from a solver is a hypothesis until the car proves it, and the interesting engineering is in the gap between the two.</p>
           <p>I also manufacture composite parts and teach composite manufacturing as a teaching assistant. I'm looking for aerodynamics roles in Formula 1, endurance racing and performance road cars.</p>
         </div>
@@ -384,7 +384,7 @@
           <dt>Focus</dt>
           <dd>Aerodynamic design, vehicle development, test and correlation</dd>
           <dt>Aero</dt>
-          <dd>Wing and floor design, airfoil selection, ride-height sensitivity, StarCCM+ angle studies and optimisation</dd>
+          <dd>Wing design, airfoil selection, ride-height sensitivity, StarCCM+ angle studies and optimisation</dd>
           <dt>Design &amp; build</dt>
           <dd>Parametric CAD in Siemens NX, composite layup, moulds and tooling, plybooks and part weight tracking</dd>
           <dt>Test &amp; data</dt>

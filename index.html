@@ -140,8 +140,8 @@
   <div class="stats">
     <div class="wrap">
       <div class="stat"><div class="v">+8.5%</div><span class="k">Rear wing downforce</span></div>
-      <div class="stat"><div class="v">+7%</div><span class="k">Whole-car downforce coefficient</span></div>
-      <div class="stat"><div class="v">+14.5%</div><span class="k">Floor &amp; front wing downforce</span></div>
+      <div class="stat"><div class="v">+7%</div><span class="k">Downforce coefficient (CLA)</span></div>
+      <div class="stat"><div class="v">+14.5%</div><span class="k">Floor downforce coefficient</span></div>
       <div class="stat"><div class="v">5%</div><span class="k">Coast-down drag vs. simulation</span></div>
     </div>
   </div>
@@ -158,9 +158,9 @@
           <h3>Rear wing: multi-element, endplates and mounts</h3>
           <p class="meta">Design · Structural · Manufacturing</p>
           <ul>
-            <li>Designed the multi-element mainplane and flaps with the endplate and swan-neck mounting, balancing downforce against drag and yaw behaviour.</li>
-            <li>Delivered <b>+8.5% rear wing downforce</b> and <b>+7% whole-car downforce coefficient</b> over the previous package at the same ride height.</li>
-            <li>Owned the part through manufacturing: composite layup, mould preparation and assembly, then sign-off before the car ran.</li>
+            <li>Designed the multi-element mainplane and flaps, endplate and swan-neck mounting, plus the internal rib and spar structure inside the wing.</li>
+            <li>Delivered <b>+8.5% rear wing downforce</b> and <b>+7% downforce coefficient</b> over the previous package.</li>
+            <li>Designed the moulds and jigging fixtures, then built the part: composite layup, mould prep, assembly and sign-off before the car ran.</li>
           </ul>
         </div>
         <figure>
@@ -175,7 +175,7 @@
           <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
           <ul>
             <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave.</li>
-            <li>Gained <b>+14.5% downforce coefficient</b> from the combined floor and front wing package.</li>
+            <li>Raised <b>floor downforce coefficient by 14.5%</b> while keeping front and rear wing load above 1%, with reduced surface area.</li>
             <li>Mapped ride-height sensitivity so the balance stays predictable through braking, kerbs and low-speed corners.</li>
           </ul>
         </div>
@@ -186,9 +186,9 @@
           <h3>Fully parametric chassis</h3>
           <p class="meta">CAD architecture · Rules compliance</p>
           <ul>
-            <li>Built the chassis as a single parametric model driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
+            <li>Built the chassis as a single parametric model in Siemens NX, driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
             <li>Encoded <b>two international Formula Student rule sets</b> as constraints, catching compliance issues before drawings were released.</li>
-            <li>Kept the model usable by the next year's team: parameters are documented and auditable, not buried in features.</li>
+            <li>Designed the bodywork around it — nosecone, pedal box cover, rear fairing and splitter — and remodelled the 2025 chassis for steering rack integration with reduced volume.</li>
           </ul>
         </div>
         <figure>
@@ -210,7 +210,7 @@
           <p style="color:var(--ink-2);margin-top:0">I run the aero test programme: what we measure, how it is processed, and whether the model survives contact with the track.</p>
           <ul class="list-clean">
             <li><b>Instrumentation.</b> Pitot-static, strain gauges, shock pots, IMU and laser ride height, all logged with vehicle speed and attitude.</li>
-            <li><b>Processing.</b> MoTeC i2 workspaces and math channels: dynamic pressure, downforce and drag from pressure and strain, ride-height and pitch traces.</li>
+            <li><b>Processing.</b> MoTeC i2 workspaces and math channels: dynamic pressure, downforce and drag from pressure and strain, ride-height and pitch traces — on-track and sub-scale data, with cleaning, filtering and reporting automated.</li>
             <li><b>Coast-down.</b> Runs to SAE J1263 practice; measured <b>Cd within 5% of simulation</b>, which is how the correlation claim is earned.</li>
             <li><b>Cornering.</b> Steady-state skid pad at 5–40 m radii plus track running, used to check centre-of-pressure behaviour and rolling resistance estimates.</li>
           </ul>

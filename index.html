@@ -190,6 +190,22 @@
           <figcaption>Rear wing assembly: multi-element wing, endplate, swan-neck mounts.</figcaption>
         </figure>
       </article>
+
+      <article class="project reverse">
+        <div class="txt">
+          <h3>2026 test campaign: skid pad, coast-down and driver selection</h3>
+          <p class="meta">Test planning · Instrumentation · Data</p>
+          <ul>
+            <li>Ran the skid pad programme on a 5–40 m radius matrix, plus coast-downs to SAE J1263 practice, to get CLA and CdA out of the car rather than out of the solver.</li>
+            <li>Wrote and ran the driver selection trial: six drivers, four sessions each, five runs per session — <b>120 candidate runs</b> on identical procedure, scored on timing and cone records.</li>
+            <li>Measured Cd within <b>5% of simulation</b>, and fed the gaps back into the 2027 targets.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/rd-15.jpg" alt="Skid pad geometry diagram with radii from 5 to 40 metres" width="1200" height="770">
+          <figcaption>Skid pad geometry: radii from 5 to 40 m.</figcaption>
+        </figure>
+      </article>
     </div>
   </section>
 
@@ -205,10 +221,10 @@
           <h3>Front wing, floor and bodywork</h3>
           <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
           <ul>
-            <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave.</li>
+            <li>Scored every design iteration against a <b>points-weighted model of four operating attitudes</b> — heave, braking, high speed and low speed — using FSAE Michigan and FS Germany points sensitivities, so the concept is chosen on tracked performance, not a single CLA number.</li>
+            <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave, and tracked centre of pressure through each change.</li>
             <li>Raised <b>floor downforce coefficient by 14.5%</b> while keeping front and rear wing CLA above 1%, with reduced surface area.</li>
-            <li>Mapped ride-height sensitivity so the balance stays predictable through braking, kerbs and low-speed corners.</li>
-            <li>Designed the accommodating bodywork — nosecone, pedal box cover, rear fairing and splitter.</li>
+            <li>Designed the accommodating bodywork — nosecone, pedal box cover, rear fairing and splitter — and set up the DRS concept and its actuator layout.</li>
           </ul>
         </div>
         <figure>
@@ -282,6 +298,8 @@
             <li><b>Processing.</b> MoTeC i2 workspaces and math channels: dynamic pressure, downforce and drag from pressure and strain, ride-height and pitch traces — on-track and sub-scale data, with cleaning, filtering and reporting automated.</li>
             <li><b>Coast-down.</b> Runs to SAE J1263 practice; measured <b>Cd within 5% of simulation</b>, which is how the correlation claim is earned.</li>
             <li><b>Cornering.</b> Steady-state skid pad at 5–40 m radii plus track running, used to check centre-of-pressure behaviour and rolling resistance estimates.</li>
+            <li><b>Programme.</b> Driver selection trials (six drivers, 120 candidate runs, identical procedure) and a test structure where each programme gets its own test plan and Gantt, so run plans, instrumentation layouts and results stay traceable.</li>
+            <li><b>Materials.</b> Lap-shear and ILS coupon testing on the composite schedule behind the aero parts, because the structure has to survive the load the aero model predicts.</li>
           </ul>
         </div>
         <div class="figs">
@@ -311,7 +329,7 @@
           <dt>Aero</dt>
           <dd>Wing and floor design, airfoil selection, ride-height sensitivity, CFD workflow</dd>
           <dt>Design &amp; build</dt>
-          <dd>Parametric CAD, composite layup and mould work, drawing release</dd>
+          <dd>Parametric CAD in Siemens NX, composite layup, moulds and tooling, plybooks and part weight tracking</dd>
           <dt>Test &amp; data</dt>
           <dd>Sensor installation, DAQ, MoTeC i2 math channels, coast-down, skid pad, sim-to-track correlation</dd>
           <dt>Education</dt>

@@ -26,7 +26,7 @@
   }
   h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:600;letter-spacing:-.01em;margin:0}
   a{color:inherit}
-  img{display:block;max-width:100%}
+  img{display:block;max-width:100%;height:auto}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
   header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:10}
@@ -64,6 +64,7 @@
   .project{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
   .project:first-of-type{border-top:none;padding-top:28px}
   .project.reverse .txt{order:2}
+  .project.no-fig{grid-template-columns:1fr;max-width:74ch}
   .project h3{font-size:23px;margin-bottom:6px}
   .project .meta{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
   .project ul{margin:0;padding-left:20px;color:var(--ink-2)}
@@ -167,7 +168,7 @@
         </figure>
       </article>
 
-      <article class="project reverse">
+      <article class="project no-fig">
         <div class="txt">
           <h3>Front wing and floor: downforce where the car needs it</h3>
           <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
@@ -177,10 +178,6 @@
             <li>Mapped ride-height sensitivity so the balance stays predictable through braking, kerbs and low-speed corners.</li>
           </ul>
         </div>
-        <figure>
-          <img src="assets/flow-viz.jpg" alt="Airfoil section with surface flow visualisation showing transition and separation" width="600" height="553">
-          <figcaption>Section flow visualisation used to check transition and separation behaviour.</figcaption>
-        </figure>
       </article>
 
       <article class="project">

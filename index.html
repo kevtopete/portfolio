@@ -53,6 +53,8 @@
   .btn.ghost:hover{border-color:var(--ink)}
   figure{margin:0}
   .hero figure img{border-radius:3px;box-shadow:0 18px 44px -22px rgba(15,17,21,.45)}
+  .hero-photo img{width:100%;height:clamp(360px,42vw,520px);object-fit:cover;object-position:50% 18%}
+  @media (max-width:860px){.hero-photo img{height:min(78vh,520px);object-position:50% 16%}}
   figcaption{font-size:13px;color:var(--muted);margin-top:10px}
 
   .stats{border-bottom:1px solid var(--line);background:var(--surface)}
@@ -98,6 +100,11 @@
   footer .contact-links{display:flex;gap:22px;flex-wrap:wrap}
 
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .rw-block{border-top:1px solid var(--line);padding:44px 0 8px}
+  .rw-block h3{font-size:23px;margin-bottom:6px}
+  .rw-block .meta{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+  .rw-block ul{margin:0 0 6px;padding-left:20px;color:var(--ink-2);max-width:76ch}
+  .rw-block li{margin-bottom:9px}
   .shot{padding:0;border:1px solid var(--line);background:#fff;border-radius:3px;overflow:hidden;cursor:zoom-in;line-height:0}
   .shot img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
   .shot:hover img,.shot:focus-visible img{transform:scale(1.045)}
@@ -160,9 +167,9 @@
             <a class="btn ghost" href="#work">See the work</a>
         </div>
       </div>
-      <figure>
-        <img src="assets/hero.jpg" alt="Global Formula Racing car at competition, rear wing and diffuser visible" width="1240" height="500">
-        <figcaption>GFR competition car — the aero package shown here is the platform I develop on.</figcaption>
+      <figure class="hero-photo">
+        <img src="assets/kevin.jpg" alt="Kevin Topete with the Global Formula Racing car" width="1333" height="2000">
+        <figcaption>With the GFR car — the platform every number on this site comes from.</figcaption>
       </figure>
     </div>
   </section>
@@ -183,7 +190,7 @@
         <p>2026 car — designed, built and signed off before it ran.</p>
       </div>
 
-      <article class="project">
+      <article class="project no-fig">
         <div class="txt">
           <h3>Rear wing: multi-element, endplates and mounts</h3>
           <p class="meta">Design · Structural · Manufacturing</p>
@@ -193,10 +200,6 @@
             <li>Designed the moulds and jigging fixtures, then built the part: composite layup, mould prep, assembly and sign-off before the car ran.</li>
           </ul>
         </div>
-        <figure>
-          <img src="assets/rear-wing.jpg" alt="CAD render of the rear wing assembly with endplates and mounting pylons" width="1265" height="772">
-          <figcaption>Rear wing assembly: multi-element wing, endplate, swan-neck mounts.</figcaption>
-        </figure>
       </article>
 
       <article class="project reverse">
@@ -269,6 +272,23 @@
           </ul>
         </div>
       </article>
+
+      <div class="rw-block">
+        <h3>2027 rear wing: structure, DRS and build</h3>
+        <p class="meta">Internal structure · DRS packaging · In-house build</p>
+        <ul>
+          <li>Rib and spar layout inside the wing carries the aero load through the endplates while keeping the assembly stiff, with the ribs cut and bonded in-house.</li>
+          <li>Single-servo DRS packaged inside the endplate: linkage routed through the plate to the flap, laid out so it can be assembled and serviced with the wing on the car.</li>
+          <li>Lightening holes, spar caps and bond lines sized so the structure survives the load the aero model predicts, not just the load that looks tidy in CAD.</li>
+        </ul>
+        <div class="gallery">
+          <button class="shot" data-cap="2027 rear wing on the car — multi-element assembly with endplates"><img src="assets/rw27-01.jpg" alt="2027 rear wing fitted to the car" width="1333" height="2000"></button>
+          <button class="shot" data-cap="Wing assembly with mounts, spar and flap hardware"><img src="assets/rw27-02.jpg" alt="Rear wing assembly with mounting hardware" width="1125" height="2000"></button>
+          <button class="shot" data-cap="DRS linkage inside the endplate — single servo through the bell crank to the flap"><img src="assets/rw27-03.jpg" alt="DRS linkage inside the endplate" width="1125" height="2000"></button>
+          <button class="shot" data-cap="Internals: ribs, spar pockets and lightening holes before closure"><img src="assets/rw27-04.jpg" alt="Rear wing internals with ribs and lightening holes" width="1125" height="2000"></button>
+          <button class="shot" data-cap="Rib and spar set, CNC-cut and ready to bond"><img src="assets/rw27-05.jpg" alt="Rib and spar set ready to bond" width="1125" height="2000"></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -384,23 +404,24 @@
 
 <script>
 (function () {
-  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
   var lb = document.getElementById('lb');
   var lbImg = document.getElementById('lb-img');
   var lbCap = document.getElementById('lb-cap');
+  var group = [];
   var index = 0;
 
   function show(n) {
-    index = (n + shots.length) % shots.length;
-    var shot = shots[index];
+    index = (n + group.length) % group.length;
+    var shot = group[index];
     var img = shot.querySelector('img');
     lbImg.src = img.getAttribute('src');
     lbImg.alt = img.getAttribute('alt');
-    lbCap.textContent = shot.getAttribute('data-cap') + '  ·  ' + (index + 1) + ' / ' + shots.length;
+    lbCap.textContent = shot.getAttribute('data-cap') + '  ·  ' + (index + 1) + ' / ' + group.length;
   }
 
-  function open(n) {
-    show(n);
+  function open(shot) {
+    group = Array.prototype.slice.call(shot.closest('.gallery').querySelectorAll('.shot'));
+    show(group.indexOf(shot));
     lb.classList.add('open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -412,8 +433,8 @@
     document.body.style.overflow = '';
   }
 
-  shots.forEach(function (shot, n) {
-    shot.addEventListener('click', function () { open(n); });
+  Array.prototype.forEach.call(document.querySelectorAll('.shot'), function (shot) {
+    shot.addEventListener('click', function () { open(shot); });
   });
 
   lb.querySelector('.close').addEventListener('click', close);

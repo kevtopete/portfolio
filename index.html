@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin Topete — Aerodynamics</title>
+<meta name="description" content="Aerodynamics and vehicle development work by Kevin Topete: rear wing, front wing and floor design, chassis, and on-track test correlation for Global Formula Racing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1115'/%3E%3Cpath d='M6 22h20l-3-5H9z' fill='%23e8eaed'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#0f1115;
+    --ink-2:#3d4450;
+    --muted:#6b7381;
+    --line:#e3e6ea;
+    --surface:#f6f7f9;
+    --accent:#b3121d;
+    --max:1060px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:600;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:10}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
+  .brand{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:19px;text-decoration:none;white-space:nowrap}
+  .brand span{color:var(--muted);font-family:inherit}
+  nav{display:flex;gap:26px;font-size:14.5px}
+  nav a{text-decoration:none;color:var(--ink-2);padding:4px 0;border-bottom:2px solid transparent}
+  nav a:hover{color:var(--ink);border-color:var(--accent)}
+
+  .hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 18px}
+  .hero h1{font-size:clamp(38px,5.2vw,60px);line-height:1.05;margin-bottom:20px}
+  .hero p.lede{font-size:19.5px;color:var(--ink-2);margin:0 0 30px;max-width:38ch}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:#fff}
+  .btn:hover{background:#000}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink)}
+  figure{margin:0}
+  .hero figure img{border-radius:3px;box-shadow:0 18px 44px -22px rgba(15,17,21,.45)}
+  figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+
+  .stats{border-bottom:1px solid var(--line);background:var(--surface)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:34px;padding-bottom:34px}
+  .stat .v{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:34px;line-height:1;letter-spacing:-.02em}
+  .stat .k{font-size:13px;color:var(--muted);margin-top:8px;display:block}
+
+  section{padding:78px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:8px}
+  .sec-head h2{font-size:clamp(26px,3vw,34px)}
+  .sec-head p{color:var(--muted);font-size:14.5px;margin:0}
+
+  .project{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
+  .project:first-of-type{border-top:none;padding-top:28px}
+  .project.reverse .txt{order:2}
+  .project h3{font-size:23px;margin-bottom:6px}
+  .project .meta{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .project ul{margin:0;padding-left:20px;color:var(--ink-2)}
+  .project li{margin-bottom:9px}
+  .project li b{color:var(--ink);font-weight:600}
+  .project figure img{border-radius:3px;border:1px solid var(--line);background:#fff}
+
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .split .figs{display:grid;gap:22px}
+  .split .figs img{border-radius:3px;border:1px solid var(--line);background:#fff}
+  .list-clean{list-style:none;margin:22px 0 0;padding:0}
+  .list-clean li{padding:13px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2)}
+  .list-clean li b{color:var(--ink);font-weight:600}
+
+  .about{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px}
+  .about p{color:var(--ink-2);margin:0 0 16px}
+  .kv{font-size:15px;color:var(--ink-2)}
+  .kv dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .kv dd{margin:4px 0 0}
+  .kv dt:first-of-type{margin-top:0}
+
+  footer{padding:46px 0 60px;font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{border-color:var(--accent)}
+
+  @media (max-width:860px){
+    .hero{padding:48px 0 40px}
+    .hero-grid,.project,.split,.about .grid{grid-template-columns:1fr;gap:32px}
+    .project.reverse .txt{order:0}
+    .stats .wrap{grid-template-columns:1fr 1fr;gap:22px}
+    nav{display:none}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Kevin Topete <span>· Aerodynamics</span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#testing">Testing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Aerodynamics · Vehicle Development</p>
+        <h1>I design the aero package, then prove it on track.</h1>
+        <p class="lede">Mechanical engineering senior at Oregon State University, graduating March 2027. I lead aerodynamic design for Global Formula Racing — rear wing, front wing and floor — and run the test programme that checks it against simulation.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:kevintopete36@gmail.com">Get in touch</a>
+          <a class="btn ghost" href="#work">See the work</a>
+        </div>
+      </div>
+      <figure>
+        <img src="assets/hero.jpg" alt="Global Formula Racing car at competition, rear wing and diffuser visible" width="1240" height="500">
+        <figcaption>GFR competition car — the aero package shown here is the platform I develop on.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><div class="v">+8.5%</div><span class="k">Rear wing downforce</span></div>
+      <div class="stat"><div class="v">+7%</div><span class="k">Whole-car downforce coefficient</span></div>
+      <div class="stat"><div class="v">+14.5%</div><span class="k">Floor &amp; front wing downforce</span></div>
+      <div class="stat"><div class="v">5%</div><span class="k">Coast-down drag vs. simulation</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Work</h2>
+        <p>Design, manufacturing and validation — end to end.</p>
+      </div>
+
+      <article class="project">
+        <div class="txt">
+          <h3>Rear wing: multi-element, endplates and mounts</h3>
+          <p class="meta">Design · Structural · Manufacturing</p>
+          <ul>
+            <li>Designed the multi-element mainplane and flaps with the endplate and swan-neck mounting, balancing downforce against drag and yaw behaviour.</li>
+            <li>Delivered <b>+8.5% rear wing downforce</b> and <b>+7% whole-car downforce coefficient</b> over the previous package at the same ride height.</li>
+            <li>Owned the part through manufacturing: composite layup, mould preparation and assembly, then sign-off before the car ran.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/rear-wing.jpg" alt="CAD render of the rear wing assembly with endplates and mounting pylons" width="1265" height="772">
+          <figcaption>Rear wing assembly: multi-element wing, endplate, swan-neck mounts.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project reverse">
+        <div class="txt">
+          <h3>Front wing and floor: downforce where the car needs it</h3>
+          <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
+          <ul>
+            <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave.</li>
+            <li>Gained <b>+14.5% downforce coefficient</b> from the combined floor and front wing package.</li>
+            <li>Mapped ride-height sensitivity so the balance stays predictable through braking, kerbs and low-speed corners.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/flow-viz.jpg" alt="Airfoil section with surface flow visualisation showing transition and separation" width="600" height="553">
+          <figcaption>Section flow visualisation used to check transition and separation behaviour.</figcaption>
+        </figure>
+      </article>
+
+      <article class="project">
+        <div class="txt">
+          <h3>Fully parametric chassis</h3>
+          <p class="meta">CAD architecture · Rules compliance</p>
+          <ul>
+            <li>Built the chassis as a single parametric model driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
+            <li>Encoded <b>two international Formula Student rule sets</b> as constraints, catching compliance issues before drawings were released.</li>
+            <li>Kept the model usable by the next year's team: parameters are documented and auditable, not buried in features.</li>
+          </ul>
+        </div>
+        <figure>
+          <img src="assets/skidpad.jpg" alt="Skid pad test matrix diagram with radii from 5 to 40 metres" width="1600" height="1105">
+          <figcaption>Test matrix used for the cornering programme — radii from 5 to 40 m.</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section id="testing" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Testing &amp; correlation</h2>
+        <p>Instrumented car, measured data, simulation checked against it.</p>
+      </div>
+      <div class="split" style="margin-top:34px">
+        <div>
+          <p style="color:var(--ink-2);margin-top:0">I run the aero test programme: what we measure, how it is processed, and whether the model survives contact with the track.</p>
+          <ul class="list-clean">
+            <li><b>Instrumentation.</b> Pitot-static, strain gauges, shock pots, IMU and laser ride height, all logged with vehicle speed and attitude.</li>
+            <li><b>Processing.</b> MoTeC i2 workspaces and math channels: dynamic pressure, downforce and drag from pressure and strain, ride-height and pitch traces.</li>
+            <li><b>Coast-down.</b> Runs to SAE J1263 practice; measured <b>Cd within 5% of simulation</b>, which is how the correlation claim is earned.</li>
+            <li><b>Cornering.</b> Steady-state skid pad at 5–40 m radii plus track running, used to check centre-of-pressure behaviour and rolling resistance estimates.</li>
+          </ul>
+        </div>
+        <div class="figs">
+          <figure>
+            <img src="assets/motec.jpg" alt="MoTeC i2 logged channels: vehicle acceleration, GPS and airspeed, total drag, track map" width="1800" height="1000">
+            <figcaption>Logged run in MoTeC i2 — accelerations, airspeed vs. GPS speed, total drag, track map.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>About</h2>
+      </div>
+      <div class="grid" style="margin-top:26px">
+        <div>
+          <p>I'm a mechanical engineering senior at Oregon State University with an aerospace focus, graduating in March 2027. I lead aerodynamic design for Global Formula Racing: rear wing, front wing and floor development, plus the team's parametric chassis.</p>
+          <p>Most of what I know came from building the parts and then measuring the car. That order matters — a number from a solver is a hypothesis until the car proves it, and the interesting engineering is in the gap between the two.</p>
+          <p>I also manufacture composite parts and teach composite manufacturing as a teaching assistant. I'm looking for aerodynamics roles in Formula 1, endurance racing and performance road cars.</p>
+        </div>
+        <dl class="kv">
+          <dt>Focus</dt>
+          <dd>Aerodynamic design, vehicle development, test and correlation</dd>
+          <dt>Aero</dt>
+          <dd>Wing and floor design, airfoil selection, ride-height sensitivity, CFD workflow</dd>
+          <dt>Design &amp; build</dt>
+          <dd>Parametric CAD, composite layup and mould work, drawing release</dd>
+          <dt>Test &amp; data</dt>
+          <dd>Sensor installation, DAQ, MoTeC i2 math channels, coast-down, skid pad, sim-to-track correlation</dd>
+          <dt>Education</dt>
+          <dd>BS Mechanical Engineering, Oregon State University — expected March 2027</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div>Kevin Topete · Murrieta, California</div>
+      <div><a href="mailto:kevintopete36@gmail.com">kevintopete36@gmail.com</a></div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

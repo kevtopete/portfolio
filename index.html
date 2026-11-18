@@ -58,11 +58,16 @@
   figcaption{font-size:13px;color:var(--muted);margin-top:10px}
 
   .stats{border-bottom:1px solid var(--line);background:var(--surface)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:34px;padding-bottom:34px}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:34px;padding-bottom:22px}
   .stat .v{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:34px;line-height:1;letter-spacing:-.02em}
   .stat .pm{display:inline-block;position:relative;width:.46em;height:.8em;margin-right:.02em}
   .stat .pm .pmi{position:absolute;inset:-.09em 0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-size:.4em;line-height:1}
   .stat .k{font-size:13px;color:var(--muted);margin-top:8px;display:block}
+  .stats .wins{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-bottom:24px;font-size:13.5px;color:var(--muted)}
+  .stats .wins .years{display:flex;align-items:baseline;gap:6px}
+  .stats .wins a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .stats .wins a:hover{border-color:var(--accent)}
+  .stats .wins .sep{color:var(--muted)}
 
   section{padding:78px 0}
   .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:8px}
@@ -183,13 +188,17 @@
       <div class="stat"><div class="v">2nd</div><span class="k">Season leading DRS</span></div>
       <div class="stat"><div class="v"><span class="pm" role="img" aria-label="plus or minus"><span class="pmi" aria-hidden="true"><span>+</span><span>−</span></span></span>5%</div><span class="k">Coast-down drag vs. simulation error</span></div>
     </div>
+    <div class="wrap wins">
+      <span>Competition wins</span>
+      <span class="years"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7391593566185275392/" target="_blank" rel="noopener">2025</a><span class="sep">·</span><a href="https://lnkd.in/p/gNnUBZ_2" target="_blank" rel="noopener">2026</a></span>
+    </div>
   </div>
 
   <section id="work">
     <div class="wrap">
       <div class="sec-head">
         <h2>Last season</h2>
-        <p>2026 car — the full aero package and chassis, designed before it ran. Competition wins: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7391593566185275392/" target="_blank" rel="noopener">2025</a> · <a href="https://lnkd.in/p/gNnUBZ_2" target="_blank" rel="noopener">2026</a>.</p>
+        <p>2026 car — the full aero package and chassis, designed before it ran.</p>
       </div>
 
       <article class="project no-fig">

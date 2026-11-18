@@ -43,6 +43,10 @@
   .hero h1{font-size:clamp(38px,5.2vw,60px);line-height:1.05;margin-bottom:20px}
   .hero p.lede{font-size:19.5px;color:var(--ink-2);margin:0 0 30px;max-width:38ch}
   .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-contact{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 26px;font-size:16.5px;color:var(--ink-2)}
+  .hero-contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .hero-contact a:hover{border-color:var(--accent)}
+  .hero-contact .sep{color:var(--muted)}
   .btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:#fff}
   .btn:hover{background:#000}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
@@ -146,10 +150,14 @@
         <p class="eyebrow">Aerodynamics · Vehicle Development</p>
         <h1>I design the aero package, then prove it on track.</h1>
         <p class="lede">Mechanical engineering senior at Oregon State University, graduating March 2027. I lead aerodynamic design for Global Formula Racing — rear wing, front wing and floor — and run the test programme that checks it against simulation.</p>
-        <div class="actions">
-          <a class="btn" href="mailto:kevin.topete36@gmail.com">Get in touch</a>
-          <a class="btn ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-          <a class="btn ghost" href="#work">See the work</a>
+          <p class="hero-contact">
+            <span><a href="mailto:kevin.topete36@gmail.com">kevin.topete36@gmail.com</a></span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span><a href="tel:+18583345652">858-334-5652</a></span>
+          </p>
+          <div class="actions">
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+            <a class="btn ghost" href="#work">See the work</a>
         </div>
       </div>
       <figure>

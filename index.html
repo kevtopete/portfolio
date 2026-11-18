@@ -93,11 +93,30 @@
   footer a:hover{border-color:var(--accent)}
   footer .contact-links{display:flex;gap:22px;flex-wrap:wrap}
 
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .shot{padding:0;border:1px solid var(--line);background:#fff;border-radius:3px;overflow:hidden;cursor:zoom-in;line-height:0}
+  .shot img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .35s ease}
+  .shot:hover img,.shot:focus-visible img{transform:scale(1.045)}
+  .shot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .lb{position:fixed;inset:0;z-index:50;display:none;background:rgba(10,11,14,.93);padding:28px}
+  .lb.open{display:grid;place-items:center}
+  .lb figure{margin:0;max-width:min(1100px,92vw);text-align:center}
+  .lb img{max-width:100%;max-height:74vh;width:auto;margin:0 auto;border-radius:3px;background:#fff}
+  .lb figcaption{color:#cfd2d8;font-size:14px;margin-top:16px;line-height:1.5}
+  .lb button{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;width:46px;height:46px;border-radius:50%;font-size:18px;line-height:1;cursor:pointer}
+  .lb button:hover{background:rgba(255,255,255,.18)}
+  .lb .prev{left:22px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:22px;top:50%;transform:translateY(-50%)}
+  .lb .close{right:22px;top:22px}
+
   @media (max-width:860px){
     .hero{padding:48px 0 40px}
     .hero-grid,.project,.split,.about .grid{grid-template-columns:1fr;gap:32px}
     .project.reverse .txt{order:0}
     .stats .wrap{grid-template-columns:1fr 1fr;gap:22px}
+    .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
+    .lb .prev{left:8px} .lb .next{right:8px} .lb .close{right:8px;top:8px}
     nav{display:none}
     section{padding:56px 0}
   }
@@ -109,7 +128,9 @@
   <div class="wrap">
     <a class="brand" href="#top">Kevin Topete <span>· Aerodynamics</span></a>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#work">Last season</a>
+      <a href="#progress">In progress</a>
+      <a href="#rd">R&amp;D</a>
       <a href="#testing">Testing</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -150,8 +171,8 @@
   <section id="work">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Work</h2>
-        <p>Design, manufacturing and validation — end to end.</p>
+        <h2>Last season</h2>
+        <p>2026 car — designed, built and signed off before it ran.</p>
       </div>
 
       <article class="project">
@@ -169,34 +190,81 @@
           <figcaption>Rear wing assembly: multi-element wing, endplate, swan-neck mounts.</figcaption>
         </figure>
       </article>
+    </div>
+  </section>
 
-      <article class="project no-fig">
+  <section id="progress" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>In progress</h2>
+        <p>2027 car — front wing, floor, bodywork and chassis architecture.</p>
+      </div>
+
+      <article class="project">
         <div class="txt">
-          <h3>Front wing and floor: downforce where the car needs it</h3>
+          <h3>Front wing, floor and bodywork</h3>
           <p class="meta">Aerodynamic design · Ride-height sensitivity</p>
           <ul>
             <li>Developed the front wing and floor as one system, trading front-axle load against the underfloor's sensitivity to pitch and heave.</li>
             <li>Raised <b>floor downforce coefficient by 14.5%</b> while keeping front and rear wing CLA above 1%, with reduced surface area.</li>
             <li>Mapped ride-height sensitivity so the balance stays predictable through braking, kerbs and low-speed corners.</li>
+            <li>Designed the accommodating bodywork — nosecone, pedal box cover, rear fairing and splitter.</li>
           </ul>
         </div>
+        <figure>
+          <img src="assets/rd-03.jpg" alt="Underbody CAD render: floor, fences and front wing" width="1200" height="435">
+          <figcaption>Floor, fences and front wing as one package.</figcaption>
+        </figure>
       </article>
 
-      <article class="project">
+      <article class="project reverse">
         <div class="txt">
           <h3>Fully parametric chassis</h3>
           <p class="meta">CAD architecture · Rules compliance</p>
           <ul>
             <li>Built the chassis as a single parametric model in Siemens NX, driven by a parameter workbook, so geometry updates instead of being redrawn.</li>
             <li>Encoded <b>two international Formula Student rule sets</b> as constraints, catching compliance issues before drawings were released.</li>
-            <li>Designed the bodywork around it — nosecone, pedal box cover, rear fairing and splitter — and remodelled the 2025 chassis for steering rack integration with reduced volume.</li>
+            <li>Remodelled the 2025 chassis for steering rack integration and reduced volume.</li>
+            <li>Kept the model auditable for the next year's team: parameters documented, not buried in features.</li>
           </ul>
         </div>
         <figure>
-          <img src="assets/skidpad.jpg" alt="Skid pad test matrix diagram with radii from 5 to 40 metres" width="1600" height="1105">
-          <figcaption>Test matrix used for the cornering programme — radii from 5 to 40 m.</figcaption>
+          <img src="assets/rd-11.jpg" alt="Top view CAD render of bodywork and cockpit" width="1200" height="1720">
+          <figcaption>Chassis volume and bodywork, top view.</figcaption>
         </figure>
       </article>
+    </div>
+  </section>
+
+  <section id="rd">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>R&amp;D examples</h2>
+        <p>Click any image to step through the set.</p>
+      </div>
+
+      <div class="gallery">
+        <button class="shot" data-cap="Front wing package — front view, multi-element with endplates"><img src="assets/rd-01.jpg" alt="Front wing package, front view" width="1200" height="585"></button>
+        <button class="shot" data-cap="Front wing and floor, installed view"><img src="assets/rd-02.jpg" alt="Front wing and floor installed view" width="1200" height="602"></button>
+        <button class="shot" data-cap="Underbody: floor, fences and front wing"><img src="assets/rd-03.jpg" alt="Underbody floor and front wing" width="1200" height="435"></button>
+        <button class="shot" data-cap="Rear wing assembly — front three-quarter"><img src="assets/rd-04.jpg" alt="Rear wing assembly front three-quarter" width="1200" height="850"></button>
+        <button class="shot" data-cap="Rear wing — internal rib and spar structure"><img src="assets/rd-05.jpg" alt="Rear wing internal rib and spar structure" width="1200" height="850"></button>
+        <button class="shot" data-cap="Rear wing element — section view"><img src="assets/rd-06.jpg" alt="Rear wing element section view" width="1200" height="697"></button>
+        <button class="shot" data-cap="Rear wing — rear three-quarter, endplate and mounts"><img src="assets/rd-07.jpg" alt="Rear wing rear three-quarter" width="1200" height="705"></button>
+        <button class="shot" data-cap="Nosecone bodywork"><img src="assets/rd-08.jpg" alt="Nosecone bodywork render" width="1200" height="694"></button>
+        <button class="shot" data-cap="Bodywork — side view"><img src="assets/rd-09.jpg" alt="Bodywork side view" width="1200" height="587"></button>
+        <button class="shot" data-cap="Bodywork — rear view"><img src="assets/rd-10.jpg" alt="Bodywork rear view" width="1200" height="1425"></button>
+        <button class="shot" data-cap="Chassis volume and cockpit — top view"><img src="assets/rd-11.jpg" alt="Chassis volume top view" width="1200" height="1720"></button>
+        <button class="shot" data-cap="Bodywork — profile"><img src="assets/rd-12.jpg" alt="Bodywork profile" width="1200" height="406"></button>
+        <button class="shot" data-cap="Section oil-flow at the tunnel exit: transition and separation"><img src="assets/rd-13.jpg" alt="Section oil-flow visualisation" width="1200" height="1044"></button>
+        <button class="shot" data-cap="Test site layout and run area"><img src="assets/rd-14.jpg" alt="Test site layout aerial view" width="1200" height="1110"></button>
+        <button class="shot" data-cap="Skid pad geometry — 5 to 40 m radii"><img src="assets/rd-15.jpg" alt="Skid pad geometry diagram" width="1200" height="770"></button>
+        <button class="shot" data-cap="Coast-down: measured drag against speed"><img src="assets/rd-16.jpg" alt="Coast-down drag versus speed plot" width="1200" height="769"></button>
+        <button class="shot" data-cap="Logged run in MoTeC i2 — math channels"><img src="assets/rd-17.jpg" alt="MoTeC i2 logged run" width="1200" height="612"></button>
+        <button class="shot" data-cap="Aerodynamic and mechanical resistance against speed"><img src="assets/rd-18.jpg" alt="Drag components versus speed diagram" width="1200" height="636"></button>
+        <button class="shot" data-cap="CLA derived from steady-state cornering"><img src="assets/rd-19.jpg" alt="CLA equation from steady-state cornering" width="1200" height="262"></button>
+        <button class="shot" data-cap="Critical corner radius for the cornering programme"><img src="assets/rd-20.jpg" alt="Critical corner radius equation" width="1200" height="230"></button>
+      </div>
     </div>
   </section>
 
@@ -265,5 +333,63 @@
   </footer>
 
 </main>
+
+<div class="lb" id="lb" aria-hidden="true" role="dialog" aria-label="Image viewer">
+  <button class="close" type="button" aria-label="Close">&times;</button>
+  <button class="prev" type="button" aria-label="Previous image">&#8249;</button>
+  <button class="next" type="button" aria-label="Next image">&#8250;</button>
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  var index = 0;
+
+  function show(n) {
+    index = (n + shots.length) % shots.length;
+    var shot = shots[index];
+    var img = shot.querySelector('img');
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt');
+    lbCap.textContent = shot.getAttribute('data-cap') + '  ·  ' + (index + 1) + ' / ' + shots.length;
+  }
+
+  function open(n) {
+    show(n);
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  shots.forEach(function (shot, n) {
+    shot.addEventListener('click', function () { open(n); });
+  });
+
+  lb.querySelector('.close').addEventListener('click', close);
+  lb.querySelector('.prev').addEventListener('click', function () { show(index - 1); });
+  lb.querySelector('.next').addEventListener('click', function () { show(index + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') show(index + 1);
+    else if (e.key === 'ArrowLeft') show(index - 1);
+  });
+})();
+</script>
 </body>
 </html>

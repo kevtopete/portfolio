@@ -60,6 +60,7 @@
   .stats{border-bottom:1px solid var(--line);background:var(--surface)}
   .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:34px;padding-bottom:34px}
   .stat .v{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:34px;line-height:1;letter-spacing:-.02em}
+  .stat .pm{display:inline-flex;flex-direction:column;align-items:center;font-size:.74em;line-height:.82;vertical-align:.04em;margin-right:.1em;letter-spacing:0}
   .stat .k{font-size:13px;color:var(--muted);margin-top:8px;display:block}
 
   section{padding:78px 0}
@@ -180,7 +181,7 @@
       <div class="stat"><div class="v">+8.5%</div><span class="k">Rear wing CLA</span></div>
       <div class="stat"><div class="v">+7%</div><span class="k">Overall vehicle CLA</span></div>
       <div class="stat"><div class="v">2nd</div><span class="k">Season leading DRS</span></div>
-      <div class="stat"><div class="v">±5%</div><span class="k">Coast-down drag vs. simulation error</span></div>
+      <div class="stat"><div class="v"><span class="pm"><span>+</span><span>−</span></span>5%</div><span class="k">Coast-down drag vs. simulation error</span></div>
     </div>
   </div>
 

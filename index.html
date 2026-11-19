@@ -84,6 +84,10 @@
   .project li{margin-bottom:9px}
   .project li b{color:var(--ink);font-weight:600}
   .project figure img{border-radius:3px;border:1px solid var(--line);background:#fff}
+  .project-wide{grid-template-columns:1fr}
+  .project-wide .txt{max-width:74ch}
+  .test-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+  .test-gallery .shot img{aspect-ratio:auto;object-fit:contain}
 
   .split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
   .split .figs{display:grid;gap:22px}
@@ -135,6 +139,7 @@
     .project.reverse .txt{order:0}
     .stats .wrap{grid-template-columns:1fr 1fr;gap:22px}
     .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
+    .test-gallery{grid-template-columns:1fr}
     .lb .prev{left:8px} .lb .next{right:8px} .lb .close{right:8px;top:8px}
     nav{display:none}
     section{padding:56px 0}
@@ -289,7 +294,7 @@
         </figure>
       </article>
 
-      <article class="project">
+      <article class="project project-wide">
         <div class="txt">
           <h3>Test campaign: skid pad, coast-down and driver selection</h3>
           <p class="meta">Test planning · Instrumentation · Data</p>
@@ -299,10 +304,12 @@
             <li>Measured Cd within <b>±5% of simulation</b>, and fed the gaps back into the 2027 targets.</li>
           </ul>
         </div>
-        <figure>
-          <img src="assets/rd-15.jpg" alt="Skid pad geometry diagram with radii from 5 to 40 metres" width="1200" height="770">
-          <figcaption>Skid pad geometry: radii from 5 to 40 m.</figcaption>
-        </figure>
+        <div class="gallery test-gallery">
+          <button class="shot" data-cap="Skid pad geometry - radii from 5 to 40 m"><img src="assets/rd-15.jpg" alt="Skid pad geometry diagram with radii from 5 to 40 metres" width="1200" height="770"></button>
+          <button class="shot" data-cap="Logged run in MoTeC i2 - accelerations, airspeed vs. GPS speed, total drag, track map"><img src="assets/rd-17.jpg" alt="MoTeC i2 logged run: acceleration, airspeed and total drag channels" width="1200" height="612"></button>
+          <button class="shot" data-cap="Coast-down - measured drag against speed"><img src="assets/rd-16.jpg" alt="Coast-down drag versus speed plot" width="1200" height="769"></button>
+          <button class="shot" data-cap="CLA derived from steady-state cornering"><img src="assets/rd-19.jpg" alt="CLA equation from steady-state cornering" width="1200" height="262"></button>
+        </div>
       </article>
 
       <article class="project no-fig">
@@ -339,10 +346,7 @@
         <button class="shot" data-cap="2026 Chassis RnD Final Parametric Concept — Front view"><img src="assets/rd-10.jpg" alt="Chassis final parametric concept, front view" width="1200" height="1425"></button>
         <button class="shot" data-cap="2026 Chassis RnD Final Parametric Concept — profile view"><img src="assets/rd-11.jpg" alt="Chassis final parametric concept, profile view" width="1200" height="406"></button>
         <button class="shot" data-cap="2026 Chassis RnD Final Parametric Concept — top view"><img src="assets/rd-12.jpg" alt="Chassis final parametric concept, top view" width="1200" height="1720"></button>
-        <button class="shot" data-cap="Coast-down: measured drag against speed"><img src="assets/rd-16.jpg" alt="Coast-down drag versus speed plot" width="1200" height="769"></button>
-        <button class="shot" data-cap="Logged run in MoTeC i2 — math channels"><img src="assets/rd-17.jpg" alt="MoTeC i2 logged run" width="1200" height="612"></button>
-        <button class="shot" data-cap="CLA derived from steady-state cornering"><img src="assets/rd-19.jpg" alt="CLA equation from steady-state cornering" width="1200" height="262"></button>
-        <button class="shot" data-cap="Critical corner radius for the cornering programme"><img src="assets/rd-20.jpg" alt="Critical corner radius equation" width="1200" height="230"></button>
+          <button class="shot" data-cap="Critical corner radius for the cornering programme"><img src="assets/rd-20.jpg" alt="Critical corner radius equation" width="1200" height="230"></button>
       </div>
     </div>
   </section>

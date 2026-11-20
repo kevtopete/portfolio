@@ -80,7 +80,6 @@
 
   .project{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:44px 0;border-top:1px solid var(--line)}
   .project:first-of-type{border-top:none;padding-top:28px}
-  .project.reverse .txt{order:2}
   .project.no-fig{grid-template-columns:1fr;max-width:74ch}
   .project h3{font-size:23px;margin-bottom:6px}
   .project .meta{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
@@ -143,7 +142,6 @@
   @media (max-width:860px){
     .hero{padding:48px 0 40px}
     .hero-grid,.project,.split,.about .grid{grid-template-columns:1fr;gap:32px}
-    .project.reverse .txt{order:0}
     .stats .wrap{grid-template-columns:1fr 1fr;gap:22px}
     .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
     .test-gallery{grid-template-columns:1fr}

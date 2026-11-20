@@ -66,11 +66,12 @@
   .stat .pm .pmi span:first-child{top:-.055em}
   .stat .pm .pmi span:last-child{top:.3em}
   .stat .k{font-size:13px;color:var(--muted);margin-top:8px;display:block}
-  .stats .wins{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-bottom:24px;font-size:13.5px;color:var(--muted)}
-  .stats .wins .years{display:flex;align-items:baseline;gap:6px}
-  .stats .wins a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
-  .stats .wins a:hover{border-color:var(--accent)}
-  .stats .wins .sep{color:var(--muted)}
+  .stats .wins{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-bottom:26px}
+  .stats .wins .label{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink)}
+  .stats .wins .years{display:flex;align-items:center;gap:8px}
+  .stats .wins a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-size:14.5px;font-weight:700;letter-spacing:.01em;line-height:1;padding:8px 16px;border-radius:999px}
+  .stats .wins a:hover{background:#8f0e17}
+  .stats .wins a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
   section{padding:78px 0}
   .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:8px}
@@ -199,8 +200,8 @@
       <div class="stat"><div class="v"><span class="pm" role="img" aria-label="plus or minus"><span class="pmi" aria-hidden="true"><span>+</span><span>−</span></span></span>5%</div><span class="k">Coast-down drag vs. simulation error</span></div>
     </div>
     <div class="wrap wins">
-      <span>Competition wins</span>
-      <span class="years"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7391593566185275392/" target="_blank" rel="noopener">2025</a><span class="sep">·</span><a href="https://lnkd.in/p/gNnUBZ_2" target="_blank" rel="noopener">2026</a></span>
+      <span class="label">Competition wins</span>
+      <span class="years"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7391593566185275392/" target="_blank" rel="noopener">2025</a><a href="https://lnkd.in/p/gNnUBZ_2" target="_blank" rel="noopener">2026</a></span>
     </div>
   </div>
 
